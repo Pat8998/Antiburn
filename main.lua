@@ -1,3 +1,4 @@
+--ADD CMD ARGUMENT TO LAUNCH ON SPECIFIC SCREEN
 local t = 2
 local timetrans = 2
 local tTrans = 1
@@ -13,10 +14,12 @@ local func = {
 local Circle = false
 
 function love.load()
+	love.window.setPosition( 0, 0, arg[2] or 1)
 	love.window.setFullscreen(true)
         love.mouse.setVisible(false)
 	love.keyboard.setKeyRepeat(true)
 end
+
 
 function love.update(dt)
 	timetrans = timetrans - 2*dt
